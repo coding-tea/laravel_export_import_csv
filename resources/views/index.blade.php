@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
-        <form action="{{ route('users.import') }}" method="post">
-            <button><a href="{{ route('users.export') }}">export</a></button>
-            <label for="file">import</label>
-            <input type="file" name="file" id="file">
+        <form action="{{ route('users.import') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <button><a href="{{ route('users.export') }}">export</a></button> <br>
+            <label for="file">import excel file</label>
+            <input type="file" name="file" id="file"> <br>
+            <input type="submit" value="import">
         </form>
     </header>
     <table>
